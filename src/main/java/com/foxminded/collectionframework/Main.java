@@ -6,19 +6,14 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		Cache cache = new Cache();
-		Counter counter = new Counter();
-		Printer printer = new Printer();
+		LetterCounter counter = new DistinctLetterCounterCached(new DistinctLetterCounter());
+		Formatter printer = new Formatter();
 		Scanner scanner = new Scanner(System.in);
 		
 		while (scanner.hasNext()) {
 			String text = scanner.nextLine();
-			Map<String, Long> letterOccurrence = cache.getValueFromCache(text);
-			if (letterOccurrence == null) {
-				letterOccurrence = counter.count(text);
-				cache.addToCache(letterOccurrence, text);
-			}
-			printer.print(cache.getValueFromCache(text), text);
+			Map<String, Long> letterOccurrence = counter.count(text);
+			System.out.println(printer.format(letterOccurrence, text));
 		}
 		scanner.close();
 	}

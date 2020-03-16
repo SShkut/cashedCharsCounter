@@ -8,16 +8,16 @@ import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class CounterTest {
+class DistinctLetterCounterTest {
 	
-	private Counter counter;
-	private Map<String, Long> result;
+	private DistinctLetterCounter counter;
+	private Map<String, Long> actual;
 	private Map<String, Long> expected;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		counter = new Counter();
-		result = new HashMap<String, Long>();
+		counter = new DistinctLetterCounter();
+		actual = new HashMap<String, Long>();
 		expected = new HashMap<String, Long>();
 	}
 
@@ -29,7 +29,7 @@ class CounterTest {
 		expected.put("c", 2L);
 		expected.put("d", 1L);
 		expected.put("e", 1L);
-		result = counter.count(text);
-		assertEquals(expected, result);
+		actual = counter.count(text);
+		assertEquals(expected, actual);
 	}
 }
