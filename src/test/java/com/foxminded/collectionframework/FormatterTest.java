@@ -26,11 +26,12 @@ class FormatterTest {
 				.append("\"e\" - 1" + NEWLINE)
 				.append("\"l\" - 3" + NEWLINE)
 				.append("\"o\" - 2" + NEWLINE)
+				.append("\" \" - 1" + NEWLINE)
 				.append("\"w\" - 1" + NEWLINE)
 				.append("\"r\" - 1" + NEWLINE)
 				.append("\"d\" - 1" + NEWLINE)
 				.append("\"!\" - 1" + NEWLINE);
 		String actual = formatter.format(counter.count(text), text);
-		assertEquals(expected, actual);
+		assertEquals(expected.toString(), actual);
 	}
 }
