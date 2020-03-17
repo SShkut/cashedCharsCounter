@@ -8,10 +8,13 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class DistinctLetterCounter implements LetterCounter {
+public class DistinctLetterCounter implements CharsCounter {
 
 	@Override
-	public Map<String, Long> count(String text) {
-		return Stream.of(text.split("")).collect(groupingBy(s -> s, LinkedHashMap::new, mapping(s -> s, counting())));
+	public Map<Character, Long> count(String text) {
+		if (text.isEmpty()) {
+			return null;
+		}
+		return Stream.of(text.split("")).collect(groupingBy(s -> s.charAt(0), LinkedHashMap::new, mapping(s -> s, counting())));
 	}
 }
