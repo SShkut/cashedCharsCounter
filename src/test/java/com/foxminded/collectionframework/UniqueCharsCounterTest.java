@@ -8,15 +8,15 @@ import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class DistinctLetterCounterTest {
+class UniqueCharsCounterTest {
 	
-	private DistinctLetterCounter counter;
+	private UniqueCharsCounter counter;
 	private Map<Character, Long> actual;
 	private Map<Character, Long> expected;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		counter = new DistinctLetterCounter();
+		counter = new UniqueCharsCounter();
 		actual = new LinkedHashMap<Character, Long>();
 		expected = new LinkedHashMap<Character, Long>();
 	}
@@ -25,7 +25,7 @@ class DistinctLetterCounterTest {
 	void givenEmptyString_whenCount_thenNull() {
 		String text = "";
 		actual = counter.count(text);
-		assertEquals(null, actual);
+		assertEquals(expected, actual);
 	}
 
 	@Test

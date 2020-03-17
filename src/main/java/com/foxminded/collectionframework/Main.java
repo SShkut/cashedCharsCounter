@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		CharsCounter counter = new CachedLetterCounter(new DistinctLetterCounter());
+		CharsCounter counter = new CachedCharasCounter(new UniqueCharsCounter());
 		Scanner scanner = new Scanner(System.in);
 		
 		while (scanner.hasNext()) {
