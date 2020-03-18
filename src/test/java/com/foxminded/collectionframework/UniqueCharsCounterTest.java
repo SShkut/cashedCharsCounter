@@ -24,7 +24,9 @@ class UniqueCharsCounterTest {
 	@Test
 	void givenEmptyString_whenCount_thenNull() {
 		String text = "";
+		
 		actual = counter.count(text);
+		
 		assertEquals(expected, actual);
 	}
 
@@ -36,7 +38,9 @@ class UniqueCharsCounterTest {
 		expected.put('c', 2L);
 		expected.put('d', 1L);
 		expected.put('e', 1L);
+		
 		actual = counter.count(text);
+		
 		assertEquals(expected, actual);
 	}
 	
@@ -48,7 +52,9 @@ class UniqueCharsCounterTest {
 		expected.put('C', 2L);
 		expected.put('D', 1L);
 		expected.put('E', 1L);
+		
 		actual = counter.count(text);
+		
 		assertEquals(expected, actual);
 	}
 	
@@ -66,7 +72,9 @@ class UniqueCharsCounterTest {
 		expected.put('d', 1L);
 		expected.put('!', 1L);
 		expected.put('@', 2L);
+		
 		actual = counter.count(text);
+		
 		assertEquals(expected, actual);
 	}
 }
