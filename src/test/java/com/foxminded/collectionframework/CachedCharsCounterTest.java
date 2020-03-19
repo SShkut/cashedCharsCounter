@@ -52,7 +52,8 @@ class CachedCharsCounterTest {
 		expected.put('d', 1L);		
 		
 		when(charsCounter.count(text)).thenReturn(expected);
+		Map<Character, Long> actual = cache.count(text);		
 		
-		assertEquals(charsCounter.count(text), cache.count(text));
+		assertEquals(expected, actual);
 	}
 }
